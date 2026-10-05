@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[100] px-4 py-4 md:px-6 pointer-events-none">
-      <div className="max-w-[1200px] mx-auto bg-[#262626e6] backdrop-blur-md px-5 py-3 md:px-8 md:py-3 rounded-[100px] border border-white/10 flex items-center justify-between pointer-events-auto">
+      <div className="max-w-[1200px] mx-auto bg-[#262626e6] backdrop-blur-md px-5 py-3 md:px-8 md:py-3 rounded-[100px] border border-white/10 flex items-center justify-between pointer-events-auto relative">
         
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
@@ -38,8 +38,8 @@ export default function Header() {
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8 items-center">
+        {/* Desktop Nav — centrado absolutamente */}
+        <nav className="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
           {links.map(link => (
             <Link 
               key={link.path} 
