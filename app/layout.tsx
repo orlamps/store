@@ -19,26 +19,30 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: {
     template: "%s | OrLamps",
-    default: "OrLamps — Iluminación & Diseño",
+    default: "OrLamps | Iluminación & Diseño",
   },
   description: "Descubre nuestra colección de lámparas y luminarias de diseño. OrLamps, especialistas en iluminación artesanal y de autor.",
   icons: {
-    icon: [{ url: "/favicon.jpg", type: "image/jpeg" }],
+    icon: [
+      { url: "/favicon.jpg", type: "image/jpeg", sizes: "any" },
+    ],
     shortcut: "/favicon.jpg",
-    apple: "/favicon.jpg",
+    apple: [
+      { url: "/favicon.jpg", sizes: "180x180", type: "image/jpeg" },
+    ],
   },
   openGraph: {
     type: "website",
     locale: "es_ES",
-    siteName: "OrLamps — Iluminación & Diseño",
-    title: "OrLamps — Iluminación & Diseño",
+    siteName: "OrLamps | Iluminación & Diseño",
+    title: "OrLamps | Iluminación & Diseño",
     description: "Descubre nuestra colección de lámparas y luminarias de diseño.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "OrLamps — Iluminación & Diseño",
+        alt: "OrLamps | Iluminación & Diseño",
       }
     ],
   },

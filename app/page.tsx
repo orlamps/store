@@ -48,12 +48,16 @@ export default async function HomePage() {
     <main>
       {/* ── HERO ── */}
       <section style={{ width: '100%', height: '70vh', minHeight: '400px', maxHeight: '750px', position: 'relative', backgroundColor: '#EFEFEF', overflow: 'hidden' }}>
-        <img 
-          src="/banner.png" 
-          alt="OrLamps - Iluminación & Diseño" 
-          fetchPriority="high"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
-        />
+        <picture>
+          {/* En móvil mostramos más del centro para no cortar el logo */}
+          <source media="(max-width: 768px)" srcSet="/banner.png" />
+          <img 
+            src="/banner.png" 
+            alt="OrLamps - Iluminación & Diseño" 
+            fetchPriority="high"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center', display: 'block' }}
+          />
+        </picture>
       </section>
 
       {/* ── CATEGORÍAS ── */}
@@ -119,11 +123,11 @@ export default async function HomePage() {
           <p className="section-subtitle" style={{ marginBottom: '36px' }}>
             {contenido.home_cta_subtitulo || 'Contáctanos y te ayudamos a encontrar la iluminación perfecta para tu espacio.'}
           </p>
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/tienda" className="btn-primary">
-              Explorar tienda
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/tienda" className="btn-primary w-full sm:w-auto text-center">
+              Catálogo
             </Link>
-            <Link href="/contacto" className="btn-outline">
+            <Link href="/contacto" className="btn-outline w-full sm:w-auto text-center">
               Contáctanos
             </Link>
           </div>
