@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Suspense } from "react";
 import SiteChrome from "@/components/SiteChrome";
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   description: "Descubre nuestra colección de lámparas y luminarias de diseño. OrLamps, especialistas en iluminación artesanal y de autor.",
   icons: {
     icon: [
-      { url: "/favicon.jpg", type: "image/jpeg", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "any" },
     ],
-    shortcut: "/favicon.jpg",
+    shortcut: "/favicon.png",
     apple: [
-      { url: "/favicon.jpg", sizes: "180x180", type: "image/jpeg" },
+      { url: "/favicon.png", sizes: "180x180", type: "image/png" },
     ],
   },
   openGraph: {
