@@ -86,7 +86,7 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-[70px] left-4 right-4 bg-[#262626f2] backdrop-blur-md rounded-2xl border border-white/10 p-4 flex flex-col gap-4 pointer-events-auto shadow-2xl">
+        <div className="md:hidden absolute top-[calc(100%+8px)] left-0 right-0 bg-[#262626f2] backdrop-blur-md rounded-2xl border border-white/10 p-4 flex flex-col gap-4 pointer-events-auto shadow-2xl">
           {links.map(link => (
             <Link 
               key={link.path} 
