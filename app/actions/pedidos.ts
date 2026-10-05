@@ -194,7 +194,7 @@ export async function crearPedido(payload: {
         })
       ] : []),
     ]);
-    ]);
+
   } catch (emailErr) {
     console.error('[Pedido] Error enviando emails:', emailErr);
   }
