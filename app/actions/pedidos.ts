@@ -169,31 +169,31 @@ export async function crearPedido(payload: {
       return { error: 'No se pudo conectar con la pasarela de pago. Intenta de nuevo o elige WhatsApp.' };
     }
   }
-
-  // Enviar correos (no bloqueante — si falla no afecta el flujo del pedido)
+  // Enviar correos (no bloqueante - si falla no afecta el flujo del pedido)
   try {
     await Promise.all([
-      emailNuevoPedido({
-        numero,
-        clienteNombre: nombre,
-        clienteEmail: email,
-        clienteTelefono: payload.cliente_telefono,
-        items,
-        total,
-        metodoPago,
-      }),
-      // Solo enviar confirmación al cliente si NO es PayPhone
-      // (PayPhone lo enviará cuando se confirme el pago)
-      ...(!usaPayphone ? [emailConfirmacionPedido({
-        numero,
-        clienteNombre: nombre,
-        clienteEmail: email,
-        items,
-        total,
-        metodoPago,
-        transferenciaDatos: contenido.transferencia_datos,
-        efectivoInstrucciones: contenido.efectivo_instrucciones,
-      })] : []),
+      ...(!usaPayphone ? [
+        emailNuevoPedido({
+          numero,
+          clienteNombre: nombre,
+          clienteEmail: email,
+          clienteTelefono: payload.cliente_telefono,
+          items,
+          total,
+          metodoPago,
+        }),
+        emailConfirmacionPedido({
+          numero,
+          clienteNombre: nombre,
+          clienteEmail: email,
+          items,
+          total,
+          metodoPago,
+          transferenciaDatos: contenido.transferencia_datos,
+          efectivoInstrucciones: contenido.efectivo_instrucciones,
+        })
+      ] : []),
+    ]);
     ]);
   } catch (emailErr) {
     console.error('[Pedido] Error enviando emails:', emailErr);

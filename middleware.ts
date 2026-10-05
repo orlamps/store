@@ -12,7 +12,8 @@ export async function middleware(request: NextRequest) {
   // Comprueba si el host empieza por "admin."
   const isAdminDomain = hostname.startsWith('admin.');
 
-  // 2. Reglas de Subdominio
+  // 2. Reglas de Subdominio (Desactivadas para permitir acceso desde www)
+  /*
   if (!isDev) {
     // Si NO es el subdominio admin, ocultar las rutas /admin y /login
     if (!isAdminDomain && (url.pathname.startsWith('/admin') || url.pathname.startsWith('/login'))) {
@@ -26,6 +27,7 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(url);
     }
   }
+  */
 
   return res;
 }

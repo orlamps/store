@@ -42,12 +42,11 @@ function buildHeader() {
   <div style="font-family:'Montserrat',Arial,sans-serif;max-width:600px;margin:0 auto;color:#141414;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #F0E6D0;">
     <!-- Header negro con logo blanco -->
     <div style="background:#141414;padding:32px 20px;text-align:center;">
-      <a href="${SITE_URL}" style="text-decoration:none;display:inline-block;">
-        <img src="${SITE_URL}/logo-blanco.png" alt="OrLamps" style="height:36px;width:auto;display:block;border:0;outline:none;margin:0 auto;" />
+      <a href="$SITE_URL" style="text-decoration:none;display:inline-block;">
+        <img src="$SITE_URL/logo-blanco.png" alt="OrLamps" style="height:48px;width:auto;display:block;border:0;outline:none;margin:0 auto;" />
       </a>
-      <p style="color:#9B6F2F;font-size:0.78rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;margin:8px 0 0;">Iluminación &amp; Diseño</p>
     </div>
-    <!-- Línea dorada decorativa -->
+    <!-- Linea dorada decorativa -->
     <div style="height:3px;background:linear-gradient(90deg,#9B6F2F,#D4A96A,#9B6F2F);"></div>
     <!-- Cuerpo -->
     <div style="padding:32px 24px;background:#ffffff;">
@@ -434,3 +433,4 @@ export async function emailPagoRecibido(data: {
 
   await sendEmail(data.clienteEmail, `✅ Pago recibido — Pedido ${data.numero} | OrLamps`, html);
 }
+
